@@ -18,7 +18,6 @@ class Command(BaseCommand):
         db_up = False
         while db_up is False:
             try:
-                self.stdout.write('Cheking...')
                 self.check(databases=['default'])
                 db_up = True
             except (Psycopg2OpError, OperationalError):
